@@ -159,17 +159,17 @@ Do not add analytics, user management, file uploads, rich-text editing, or unrel
 
 Define a type that is ready for the staging database integration. The exact database schema will be finalized in Stage 2, but the UI should be designed around the following fields:
 
-| Field | Purpose |
-| --- | --- |
-| `id` | Stable record ID |
-| `pageKey` | Stable documentation route or page identifier |
-| `title` | Video title shown on the documentation page |
-| `youtubeUrl` or `youtubeVideoId` | YouTube source |
-| `description` | Optional short supporting text |
-| `isPublished` | Controls public visibility |
-| `displayOrder` | Allows future ordering if a page supports more than one video |
-| `createdAt` | Creation timestamp |
-| `updatedAt` | Last update timestamp |
+| Field                            | Purpose                                                       |
+| -------------------------------- | ------------------------------------------------------------- |
+| `id`                             | Stable record ID                                              |
+| `pageKey`                        | Stable documentation route or page identifier                 |
+| `title`                          | Video title shown on the documentation page                   |
+| `youtubeUrl` or `youtubeVideoId` | YouTube source                                                |
+| `description`                    | Optional short supporting text                                |
+| `isPublished`                    | Controls public visibility                                    |
+| `displayOrder`                   | Allows future ordering if a page supports more than one video |
+| `createdAt`                      | Creation timestamp                                            |
+| `updatedAt`                      | Last update timestamp                                         |
 
 For the first release, the UI only needs one video per page. The schema may remain capable of supporting more than one video later, but do not build a multi-video carousel or playlist now.
 
@@ -261,4 +261,3 @@ These items are intentionally not guessed and can be supplied when available:
 - Confirmation that `/docs/getting-started` is the correct first documentation page.
 - Supabase project URL and public anon key for local/staging configuration.
 - Email address of the initial admin account.
-

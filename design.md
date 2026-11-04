@@ -20,21 +20,21 @@ Core principles:
 
 ## Color system
 
-| Token | Value | Use |
-| --- | --- | --- |
-| Canvas | `#f8fafc` | Main page background |
+| Token        | Value     | Use                                        |
+| ------------ | --------- | ------------------------------------------ |
+| Canvas       | `#f8fafc` | Main page background                       |
 | Surface soft | `#eef4fb` | Alternating sections and navigation states |
-| Surface card | `#e5edf8` | Secondary cards |
-| Surface dark | `#071426` | Terminal and strong CTA surfaces |
-| Ink | `#071426` | Headlines and primary actions |
-| Body | `#31445f` | Running text |
-| Muted | `#5b6f8d` | Captions and secondary labels |
-| Blue | `#2563eb` | Primary brand accent |
-| Cyan | `#38bdf8` | Framework and code highlights |
-| Mint | `#2dd4bf` | Success and completion |
-| Violet | `#a78bfa` | Architecture and generator highlights |
-| Magenta | `#c026d3` | Select emphasis only |
-| Amber | `#f59e0b` | Warnings and tooling highlights |
+| Surface card | `#e5edf8` | Secondary cards                            |
+| Surface dark | `#071426` | Terminal and strong CTA surfaces           |
+| Ink          | `#071426` | Headlines and primary actions              |
+| Body         | `#31445f` | Running text                               |
+| Muted        | `#5b6f8d` | Captions and secondary labels              |
+| Blue         | `#2563eb` | Primary brand accent                       |
+| Cyan         | `#38bdf8` | Framework and code highlights              |
+| Mint         | `#2dd4bf` | Success and completion                     |
+| Violet       | `#a78bfa` | Architecture and generator highlights      |
+| Magenta      | `#c026d3` | Select emphasis only                       |
+| Amber        | `#f59e0b` | Warnings and tooling highlights            |
 
 ## Typography
 

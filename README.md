@@ -83,26 +83,26 @@ and an existing production build.
 
 ## Routes
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Product landing page |
-| `/docs` | Documentation overview |
-| `/docs/getting-started` | Project creation workflow |
-| `/docs/configuration` | `fsd.config.json` reference |
-| `/docs/slice-generator` | Feature, entity, widget, and page generation |
-| `/docs/auth-generator` | Dedicated auth flow generation |
-| `/docs/ai-agent-skill` | Beta installation, safety note, and verified scope of the `fsd-cli` Agent Skill |
-| `/docs/frameworks/vue` | Vue + Vite template and generator guide |
-| `/docs/frameworks/nuxt` | Nuxt template, SSR integration, and generator guide |
-| `/docs/frameworks/sveltekit` | SvelteKit template, stack, routing, and generator guide |
-| `/docs/releases` | CLI release history and legacy archive |
-| `/docs/releases/[version]` | Version-specific changes and installation command |
-| `/sitemap.xml` | Canonical static route inventory for crawlers |
-| `/robots.txt` | Crawler policy, including explicit AI crawler access |
-| `/llms.txt` | Concise LLM-oriented product and documentation index |
-| `/llms-full.txt` | Consolidated LLM-oriented CLI reference |
-| `/dashboard/login` | Admin email and password sign-in |
-| `/dashboard` | Protected admin dashboard |
+| Route                        | Purpose                                                                         |
+| ---------------------------- | ------------------------------------------------------------------------------- |
+| `/`                          | Product landing page                                                            |
+| `/docs`                      | Documentation overview                                                          |
+| `/docs/getting-started`      | Project creation workflow                                                       |
+| `/docs/configuration`        | `fsd.config.json` reference                                                     |
+| `/docs/slice-generator`      | Feature, entity, widget, and page generation                                    |
+| `/docs/auth-generator`       | Dedicated auth flow generation                                                  |
+| `/docs/ai-agent-skill`       | Beta installation, safety note, and verified scope of the `fsd-cli` Agent Skill |
+| `/docs/frameworks/vue`       | Vue + Vite template and generator guide                                         |
+| `/docs/frameworks/nuxt`      | Nuxt template, SSR integration, and generator guide                             |
+| `/docs/frameworks/sveltekit` | SvelteKit template, stack, routing, and generator guide                         |
+| `/docs/releases`             | CLI release history and legacy archive                                          |
+| `/docs/releases/[version]`   | Version-specific changes and installation command                               |
+| `/sitemap.xml`               | Canonical static route inventory for crawlers                                   |
+| `/robots.txt`                | Crawler policy, including explicit AI crawler access                            |
+| `/llms.txt`                  | Concise LLM-oriented product and documentation index                            |
+| `/llms-full.txt`             | Consolidated LLM-oriented CLI reference                                         |
+| `/dashboard/login`           | Admin email and password sign-in                                                |
+| `/dashboard`                 | Protected admin dashboard                                                       |
 
 ## Maintaining documentation
 
