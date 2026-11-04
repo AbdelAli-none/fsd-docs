@@ -35,6 +35,20 @@ assert.equal(
   "release routes must only use build-time generateStaticParams values",
 );
 
+// Pages that override openGraph/twitter must not drop the share image.
+for (const page of ["architecture", "capabilities"]) {
+  const html = fs.readFileSync(`.next/server/app/${page}.html`, "utf8");
+  for (const tag of [
+    '<meta property="og:image" content="https://fsdcli.me/og/fsd-cli-og-1200x630-v1.png"',
+    '<meta property="og:image:width" content="1200"',
+    '<meta property="og:image:height" content="630"',
+    '<meta name="twitter:image" content="https://fsdcli.me/og/fsd-cli-og-1200x630-v1.png"',
+    '<meta name="twitter:image:alt"',
+  ]) {
+    assert(html.includes(tag), `/${page}: missing ${tag}`);
+  }
+}
+
 console.log(
   `Passed: ${new Set(requiredStaticRoutes).size} landing, docs, metadata, and LLM routes are prerendered statically.`,
 );

@@ -3,6 +3,7 @@ import { Explore } from "@/components/landing/explore";
 import { Footer } from "@/components/landing/footer";
 import { Hero } from "@/components/landing/hero";
 import { Navigation } from "@/components/landing/navigation";
+import { OurTeam } from "@/components/landing/our-team";
 import { ProductStory } from "@/components/landing/product-story";
 import { ProjectStats } from "@/components/landing/project-stats";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <ProjectStats />
         <ProductStory />
         <Explore />
+        <OurTeam />
         <CtaBand />
       </main>
       <Footer />
