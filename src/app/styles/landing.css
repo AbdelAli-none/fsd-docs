@@ -1077,9 +1077,8 @@
 
 .landing-team {
   text-align: center;
-  margin-block: 6.25rem;
   max-width: 1280px;
-  margin: auto;
+  margin: 6.25rem auto;
   padding: 60px 24px 36px;
 }
 

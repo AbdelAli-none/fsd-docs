@@ -16,9 +16,9 @@ export default function Home() {
       <main id="main-content" tabIndex={-1} className="outline-none">
         <Hero />
         <ProjectStats />
-        <OurTeam />
         <ProductStory />
         <Explore />
+        <OurTeam />
         <CtaBand />
       </main>
       <Footer />

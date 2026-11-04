@@ -2,25 +2,21 @@ import { MemberCard } from "./member-card";
 
 const team = [
   {
-    id: 1,
     name: "Ashraf Qopiah",
-    role: "Software Founder",
+    role: "Founder",
     photo: "/team/ashraf.webp",
   },
   {
-    id: 2,
     name: "Mahmoud Saber",
     role: "Software Engineer",
     photo: "/team/mahmoud-saber.webp",
   },
   {
-    id: 3,
     name: "Ziad Zamel",
     role: "Frontend Developer",
     photo: "/team/ziad-zamel.webp",
   },
   {
-    id: 4,
     name: "Djourni Abdel Ali",
     role: "Frontend Developer",
     photo: "/team/ali.webp",
@@ -35,7 +31,7 @@ export function OurTeam() {
       <p className="landing-team__subtitle">The team behind FSD CLI</p>
       <ul className="landing-team__grid grid grid-cols-2 gap-4 sm:grid-cols-4">
         {team.map((member) => (
-          <MemberCard key={member.id} {...member} />
+          <MemberCard key={member.name} {...member} />
         ))}
       </ul>
     </section>
