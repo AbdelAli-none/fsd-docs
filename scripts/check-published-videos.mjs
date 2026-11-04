@@ -3,13 +3,13 @@ import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { readFile, rename, rm } from "node:fs/promises";
 import { createServer } from "node:http";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
 import { DOCS_NAV_ITEMS } from "../src/lib/docs-navigation.ts";
 
 // Exercise the real static renderer against an isolated anonymous REST fixture.
 const seen = new Set();
-const backup = join(tmpdir(), `fsd-docs-next-backup-${process.pid}`);
+// Keep the backup beside .next: rename() cannot cross filesystems, and the
+// runner's /tmp may be on a different one than the workspace.
+const backup = `.next-backup-${process.pid}`;
 let building = false;
 const hadBuild = existsSync(".next");
 const server = createServer((request, response) => {

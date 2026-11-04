@@ -6,6 +6,7 @@ import { Documentation } from "@/components/landing/documentation";
 import { FeatureCards } from "@/components/landing/feature-cards";
 import { Footer } from "@/components/landing/footer";
 import { Navigation } from "@/components/landing/navigation";
+import { defaultOgImage } from "@/lib/metadata";
 
 export const dynamic = "force-static";
 export const metadata: Metadata = {
@@ -18,6 +19,14 @@ export const metadata: Metadata = {
     description:
       "Explore the complete FSD CLI toolkit, framework templates, generators, and FAQ.",
     url: "/capabilities",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Capabilities | FSD CLI",
+    description:
+      "Explore the complete FSD CLI toolkit, framework templates, generators, and FAQ.",
+    images: [defaultOgImage],
   },
 };
 export default function CapabilitiesPage() {
