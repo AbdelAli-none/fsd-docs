@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./styles/globals.css";
 import { SupportProvider } from "@/components/landing/support-controls";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { defaultOgImage } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 import {
   jsonLdScript,
@@ -72,20 +73,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "FSD CLI — Build Scalable Frontends from Day One",
     description: siteConfig.description,
-    images: [
-      {
-        url: "/og/fsd-cli-og-1200x630-v1.png",
-        width: 1200,
-        height: 630,
-        alt: "FSD CLI logo",
-      },
-    ],
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "FSD CLI — Build Scalable Frontends from Day One",
     description: siteConfig.description,
-    images: ["/og/fsd-cli-og-1200x630-v1.png"],
+    images: [defaultOgImage],
   },
 };
 
