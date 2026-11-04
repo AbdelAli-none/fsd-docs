@@ -1074,3 +1074,50 @@
     transition: none;
   }
 }
+
+.landing-team {
+  text-align: center;
+  margin-block: 6.25rem;
+  max-width: 1280px;
+  margin: auto;
+  padding: 60px 24px 36px;
+}
+
+.landing-team h2 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.landing-team__subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.member-card {
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+}
+
+.member-card__name {
+  padding: 0.25rem;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.member-card__role {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 2rem;
+  margin-top: -1rem;
+  padding-inline: 0.625rem;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--surface-strong);
+  white-space: nowrap;
+}

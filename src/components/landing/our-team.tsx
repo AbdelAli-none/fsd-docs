@@ -1,56 +1,43 @@
-import MemberCard from "./member-card";
+import { MemberCard } from "./member-card";
 
 const team = [
   {
     id: 1,
     name: "Ashraf Qopiah",
     role: "Software Founder",
-    profile: "/teamPhotos/ashraf.png",
-    bg: "#10EAFB",
+    photo: "/team/ashraf.webp",
   },
   {
     id: 2,
     name: "Mahmoud Saber",
     role: "Software Engineer",
-    profile: "/teamPhotos/mahmoudSaber.png",
-    bg: "#672EFB",
+    photo: "/team/mahmoud-saber.webp",
   },
   {
     id: 3,
     name: "Ziad Zamel",
     role: "Frontend Developer",
-    profile: "/teamPhotos/ziadZamel.png",
-    bg: "#0060FC",
+    photo: "/team/ziad-zamel.webp",
   },
   {
     id: 4,
     name: "Djourni Abdel Ali",
     role: "Frontend Developer",
-    profile: "/teamPhotos/ali.png",
-    bg: "#0060FC",
+    photo: "/team/ali.webp",
   },
 ];
 
-const OurTeam = () => {
+export function OurTeam() {
   return (
-    <section className="text-center min-w-170 my-25 flex flex-col">
-      <div className="mb-6">
-        <h2 className="text-4xl mb-2">Meet Our Team</h2>
-        <p className="text-md">"The team behind FSD CLI"</p>
-      </div>
-      <div className="flex justify-center gap-x-2">
+    <section className="landing-team" aria-labelledby="team-heading">
+      <p className="section-kicker">THE PEOPLE</p>
+      <h2 id="team-heading">Meet our team</h2>
+      <p className="landing-team__subtitle">The team behind FSD CLI</p>
+      <ul className="landing-team__grid grid grid-cols-2 gap-4 sm:grid-cols-4">
         {team.map((member) => (
-          <MemberCard
-            key={member.id}
-            name={member.name}
-            profilePhotoSrc={member.profile}
-            role={member.role}
-            bg={member.bg}
-          />
+          <MemberCard key={member.id} {...member} />
         ))}
-      </div>
+      </ul>
     </section>
   );
-};
-
-export default OurTeam;
+}
