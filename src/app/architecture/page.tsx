@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/landing/cta-band";
 import { Footer } from "@/components/landing/footer";
 import { Navigation } from "@/components/landing/navigation";
 import { ScrollFeatures } from "@/components/landing/scroll-features";
+import { defaultOgImage } from "@/lib/metadata";
 
 export const dynamic = "force-static";
 export const metadata: Metadata = {
@@ -17,6 +18,14 @@ export const metadata: Metadata = {
     description:
       "Six layers. Clear boundaries. Explore the FSD CLI architecture and workflow.",
     url: "/architecture",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Architecture | FSD CLI",
+    description:
+      "Six layers. Clear boundaries. Explore the FSD CLI architecture and workflow.",
+    images: [defaultOgImage],
   },
 };
 export default function ArchitecturePage() {
