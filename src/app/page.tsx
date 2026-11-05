@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import { CtaBand } from "@/components/landing/cta-band";
 import { Explore } from "@/components/landing/explore";
 import { Footer } from "@/components/landing/footer";
@@ -6,7 +8,6 @@ import { Navigation } from "@/components/landing/navigation";
 import { OurTeam } from "@/components/landing/our-team";
 import { ProductStory } from "@/components/landing/product-story";
 import { ProjectStats } from "@/components/landing/project-stats";
-import { Metadata } from "next";
 
 export const dynamic = "force-static";
 
