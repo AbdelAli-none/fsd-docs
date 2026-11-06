@@ -21,6 +21,11 @@ const team = [
     role: "Frontend Developer",
     photo: "/team/ali.webp",
   },
+  {
+    name: "Amr Almasry",
+    role: "Frontend Developer",
+    photo: "/team/amr-almasry.webp",
+  },
 ];
 
 export function OurTeam() {
