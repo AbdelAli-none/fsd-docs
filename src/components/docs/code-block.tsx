@@ -1,8 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Check, Copy, X } from "lucide-react";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+import { cn } from "@/lib/utils";
 
 export function CopyCodeButton({ text }: { text: string }) {
   const { status, copy } = useCopyToClipboard();
