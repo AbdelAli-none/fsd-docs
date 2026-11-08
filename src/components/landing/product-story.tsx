@@ -24,7 +24,7 @@ const CHAPTERS = [
     title: "A foundation.\nNot a blank folder.",
     description:
       "Choose your framework and stack. Start with FSD layers, TypeScript, and tooling already in place.",
-    command: "npx create-fsd-architecture@latest@latest",
+    command: "npx create-fsd-architecture@latest",
     file: "my-app / src",
     lines: [
       "app/         → initialize",

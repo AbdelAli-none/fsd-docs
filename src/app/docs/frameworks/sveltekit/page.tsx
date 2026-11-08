@@ -44,7 +44,7 @@ export default function SvelteKitFrameworkPage() {
         >
           Create a SvelteKit project
         </h2>
-        <CodeBlock code="npx create-fsd-architecture@latest@latest my-app --framework sveltekit --yes" />
+        <CodeBlock code="npx create-fsd-architecture@latest my-app --framework sveltekit --yes" />
         <CodeBlock code="npm create fsd-architecture@latest" />
         <p className="text-sm leading-relaxed text-body-muted">
           Interactive setup lets you keep the defaults—native Fetch, Svelte
