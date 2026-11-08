@@ -268,7 +268,7 @@ export function Documentation() {
               </p>
               <div className="space-y-3">
                 <CodeBlock code="npm create fsd-architecture@latest" />
-                <CodeBlock code="npx create-fsd-architecture@latest@latest" />
+                <CodeBlock code="npx create-fsd-architecture@latest" />
               </div>
             </div>
 
