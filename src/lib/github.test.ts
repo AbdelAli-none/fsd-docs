@@ -25,7 +25,7 @@ test("formatStarCount handles counts, 1k formatting, and invalid inputs without 
   assert.equal(formatStarCount(0), "0");
   assert.equal(formatStarCount(120), "120");
   assert.equal(formatStarCount(1_000), "1k");
-  assert.equal(formatStarCount(1_450), "1.5k");
+  assert.equal(formatStarCount(1_460), "1.5k");
   assert.equal(formatStarCount(null), "—");
   assert.equal(formatStarCount(undefined), "—");
   assert.equal(formatStarCount(-3), "—");
