@@ -220,7 +220,7 @@ export function getLlmsIndexForLocale(code: LocaleCode): string {
       "): " +
       content.description,
     "",
-    "## " + content.docsHeading,
+    `## ${content.docsHeading}`,
     "",
     "- [Getting Started](" +
       absoluteUrl("/docs/getting-started") +
@@ -239,9 +239,9 @@ export function getLlmsIndexForLocale(code: LocaleCode): string {
 
 export function getLlmsFull() {
   const releaseDetails = latestRelease.sections.flatMap((section) => [
-    "### " + section.title,
+    `### ${section.title}`,
     "",
-    ...section.items.map((item) => "- " + item),
+    ...section.items.map((item) => `- ${item}`),
     "",
   ]);
   const releaseArchive = CLI_RELEASES.map(
@@ -249,7 +249,7 @@ export function getLlmsFull() {
       "- [" +
       release.version +
       "](" +
-      absoluteUrl("/docs/releases/" + release.version) +
+      absoluteUrl(`/docs/releases/${release.version}`) +
       "): " +
       release.summary,
   );
@@ -284,15 +284,15 @@ export function getLlmsFull() {
   return [
     "# FSD CLI complete reference",
     "",
-    "Canonical site: " + siteConfig.url,
-    "Package: " + siteConfig.packageName,
+    `Canonical site: ${siteConfig.url}`,
+    `Package: ${siteConfig.packageName}`,
     "Current documented release: " +
       latestRelease.version +
       " (" +
       latestRelease.date +
       ")",
-    "Source: " + siteConfig.github,
-    "Support: " + siteConfig.support.githubSponsors,
+    `Source: ${siteConfig.github}`,
+    `Support: ${siteConfig.support.githubSponsors}`,
     "",
     "## Product scope",
     "",
@@ -328,7 +328,7 @@ export function getLlmsFull() {
     "",
     "    npx create-fsd-architecture@latest my-app --framework nextjs --package-manager pnpm --yes --no-start",
     "",
-    "Supported framework IDs: " + supportedFrameworks + ".",
+    `Supported framework IDs: ${supportedFrameworks}.`,
     "",
     "Create options: " +
       createOptions +
@@ -421,7 +421,7 @@ export function getLlmsFull() {
     "",
     ...docsLinks(),
     "",
-    "## Latest release: " + latestRelease.version,
+    `## Latest release: ${latestRelease.version}`,
     "",
     latestRelease.summary,
     "",
