@@ -1,11 +1,12 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Loader2, Menu, Star, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
+import { formatStarCount, getRepoStars } from "@/lib/github";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { GitHubIcon } from "./github-icon";
@@ -22,10 +23,32 @@ const NAV_LINKS = [
 
 export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [stars, setStars] = useState<number | null>(null);
+  const [loadingStars, setLoadingStars] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
   const toggleRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const repoUrl = siteConfig.github || "https://github.com/FSD-CLI/cli";
+
+    setLoadingStars(true);
+    getRepoStars(repoUrl, controller.signal)
+      .then((count) => {
+        if (!controller.signal.aborted) {
+          setStars(count);
+        }
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) {
+          setLoadingStars(false);
+        }
+      });
+
+    return () => controller.abort();
+  }, []);
 
   // Move focus into the menu when it opens, and close it on Escape.
   useEffect(() => {
@@ -77,6 +100,29 @@ export function Navigation() {
     window.addEventListener("hashchange", redirect);
     return () => window.removeEventListener("hashchange", redirect);
   }, [pathname, router]);
+
+  const starLabel = loadingStars ? "..." : formatStarCount(stars);
+  const githubAriaLabel =
+    stars !== null
+      ? `FSD-CLI/cli on GitHub (${stars.toLocaleString()} stars)`
+      : "FSD-CLI/cli on GitHub";
+
+  const renderStarBadgeContent = () => (
+    <span className="inline-flex items-center gap-1 tabular-nums">
+      <Star
+        className="h-3 w-3 fill-amber-400 text-amber-400"
+        aria-hidden="true"
+      />
+      {loadingStars ? (
+        <Loader2
+          className="h-3.5 w-3.5 animate-spin text-body-muted"
+          aria-hidden="true"
+        />
+      ) : (
+        <span>{starLabel}</span>
+      )}
+    </span>
+  );
 
   return (
     <nav
@@ -136,15 +182,17 @@ export function Navigation() {
             <SupportButton />
           </span>
         </div>
+
         <div className="hidden items-center gap-3 xl:flex">
           <a
             href={siteConfig.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={githubAriaLabel}
             className="inline-flex h-9 items-center gap-2 rounded-[12px] border border-hairline bg-canvas px-4 text-sm font-semibold text-ink transition-colors hover:bg-surface-soft"
           >
-            <GitHubIcon className="h-4 w-4" />
-            GitHub
+            <GitHubIcon className="h-5 w-5" />
+            {renderStarBadgeContent()}
           </a>
           <Link
             href="/docs/getting-started"
@@ -218,10 +266,11 @@ export function Navigation() {
               href={siteConfig.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={githubAriaLabel}
               className="inline-flex h-10 items-center justify-center gap-2 rounded-[12px] border border-hairline bg-canvas text-sm font-semibold text-ink"
             >
               <GitHubIcon className="h-4 w-4" />
-              GitHub
+              {renderStarBadgeContent()}
             </a>
             <Link
               href="/docs/getting-started"
