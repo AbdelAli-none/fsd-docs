@@ -1,7 +1,7 @@
 "use client";
 
 import { Monitor, Moon, Sun } from "lucide-react";
-import { type ThemePreference, useTheme } from "./theme-provider";
+import { useTheme } from "./theme-provider";
 
 export function ThemeSwitcher() {
   const { preference, setPreference } = useTheme();
