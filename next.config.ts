@@ -10,6 +10,9 @@ const immutableAssetHeaders = [
 
 const nextConfig: NextConfig = {
   /* config options here */
+  experimental: {
+    agentUpgrade: "security",
+  },
   reactCompiler: true,
   poweredByHeader: false,
   async headers() {
